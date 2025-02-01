@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <title>profile-card | Chukwufumnaya Emmanuel Ashinze</title>
+</head>
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: currentColor;
+  }
+  .container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+ .body{
+   background: radial-gradient(hsl(240, 100%, 15%), hsl(240, 100%, 20%));
+   min-height: 100vh;
+   padding: 1em;
+   position: relative;
+ }
+  .gridlines{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    justify-content: space-evenly;
+    z-index: -1;
+  }
+  .gridline{
+    background: hsl(195, 80%, 60%);
+    filter: blur(1px);
+  }
+  .row .gridline{
+    width: 100%;
+    height: 1px;
+  }
+  .column .gridline{
+    height: 100%;
+    width: 1px;
+  }
+  .profile-card{
+    background: hsla(0, 0%, 100%, .1);
+    backdrop-filter: blur(3px);
+    padding: .5em;
+    width: min(100%, 70rem);
+    gap: 1.5em;
+    border-radius: 1em;
+  }
+  .profile-picture{
+    aspect-ratio: 4/3;
+    flex: 1 1;
+    width: min(100%, 15rem);
+    border-radius: inherit;
+  }
+  .text-content{
+    flex: 1 1 min(100%, 30rem);
+    text-align: center;
+    color: hsl(195, 80%, 60%);
+  }
+  .text-content .content:not(:last-child){
+    margin-bottom: .5em;
+    font-size: .8rem;
+  }
+  .current-location, .email-address{
+    justify-content: left;
+    color: HSL(210, 40%, 70%);
+  }
+  .sociallinks{
+    /* gap: 1em; */
+    font-size: 2rem;
+  }
+  .link-text{
+    visibility: hidden;
+    opacity: 0;
+    transition: 300ms;
+    margin-left: -50%;
+  }
+  .social-link:hover .link-text{
+    margin-left: 0;
+    opacity: 1;
+    visibility: visible;
+  }
+ @media screen and (min-width: 50rem){
+    .name{
+      text-align: left;
+    }
+  }
+</style>
+<body class="container body">
+  <main class="container profile-card">
+    <img class="profile-picture" src="IMG_20250114_153225.webp" alt="picture of chukwufumnaya emmanuel ashinze" data-testid="profilePicture">
+    <section class="text-content">
+    <div class="content">
+    <h1 class="name" data-testid="fullName">Chukwufumnaya Emmanuel Ashinze</h1>
+    <h2 class="name" data-testid="jobTitle">Senior Frontend Developer</h2>
+    </div>
+    <p class="content name" data-testid="shortBio">
+      Passionate frontend developer with a flare for creating beautiful and functional user interfaces. Always eager to learn new technologies and contribute to innovative projects that make a difference.
+    </p>
+    <div class="content">
+    <a href="geo: 6.5227° N,
+3.6218° E" class="container current-location" data-testid="currentLocation">
+      <i class='bx bxs-location-plus bx-sm' ></i>
+      Lagos, Nigeria
+    </a>
+    <a href="mailto: emmanuelashinze612@gmail.com" class="email-address container" data-testid="emailAddress">
+      <i class='bx bxs-envelope bx-sm' ></i>
+      emmanuelashinze612@gmail.com
+    </a>
+    </div>
+    <div class="container sociallinks content" data-testid="socialLinks">
+      <a class="container social-link github" href="">
+        <i class='bx bxl-github bx-lg'></i>
+        <span class="link-text bx-xs">Github</span>
+      </a>
+      <a class="container social-link" href="">
+        <i class='bx bxl-linkedin-square bx-lg' ></i>
+        <span class="link-text bx-xs">Linkedin</span>
+      </a>
+      <a class="container social-link" href="">
+        <i class='bx bxl-twitter bx-lg'></i>
+        <span class="link-text bx-xs">Twitter</span>
+      </a>
+    </div>
+    <div class="content" data-testid="currentTimeUTC"></div>
+    </section>
+  </main>
+  <section class="gridlines column container">
+    <div class="gridline"></div>
+    <div class="gridline"></div>
+    <div class="gridline"></div>
+    <div class="gridline"></div>
+    <div class="gridline"></div>
+    <div class="gridline"></div>
+    <div class="gridline"></div>
+    <div class="gridline"></div>
+    <div class="gridline"></div>
+    <div class="gridline"></div>
+    <div class="gridline"></div>
+    <div class="gridline"></div>
+    <div class="gridline"></div>
+    <div class="gridline"></div>
+    <div class="gridline"></div>
+  </section>
+  <section class="gridlines row container">
+    <div class="gridline"></div>
+    <div class="gridline"></div>
+    <div class="gridline"></div>
+    <div class="gridline"></div>
+    <div class="gridline"></div>
+    <div class="gridline"></div>
+    <div class="gridline"></div>
+    <div class="gridline"></div>
+    <div class="gridline"></div>
+    <div class="gridline"></div>
+    <div class="gridline"></div>
+    <div class="gridline"></div>
+    <div class="gridline"></div>
+    <div class="gridline"></div>
+    <div class="gridline"></div>
+    <div class="gridline"></div>
+    <div class="gridline"></div>
+    <div class="gridline"></div>
+    <div class="gridline"></div>
+    <div class="gridline"></div>
+  </section>
+  <script>
+    function updateUTCTime() {
+            const timeElement = document.querySelector('[data-testid="currentTimeUTC"]');
+            const now = new Date();
+            const utcString = now.toUTCString();
+            timeElement.textContent = `Current Time: ${utcString}`;
+        }
+        updateUTCTime();
+        setInterval(updateUTCTime, 1000);
+  </script>
+</body>
+</html>
